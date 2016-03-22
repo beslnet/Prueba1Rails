@@ -15,3 +15,5 @@
 //= require turbolinks
 //= require backstretch
 //= require_tree .
+//= stub batman
+//= stub superman
