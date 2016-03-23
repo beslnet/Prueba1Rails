@@ -1,8 +1,43 @@
 <style>
 img {
-    width: 49%;
+    width: 40%;
 }
 
 </style>
+
+<% if notice %>
+<div class="alert alert-success" role="alert">
+<strong>Excelente!</strong> <%= notice %>
+</div>
+<% elsif alert %>
+<div class="alert alert-warning" role="alert">
+<strong>Warning!</strong> <%= alert %>
+</div>
+<% end %>
+
+<div>
 <%= link_to image_tag("batman2.jpg"), pages_batman_path %>
+<%= form_tag pages_save_data_path, method: "post" do %>
+	<div class="form-group">
+		<%= label_tag :email, 'Ingrese su E-Mail para registrar su voto' %>
+		<%= text_field_tag :email, params[:email] , class: "form-control"%>
+		<%= hidden_field_tag 'hero', 'superman', class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= submit_tag "Enviar", class:"btn btn-success" %>
+	</div>
+<% end %>
+</div>
+<div>
 <%= link_to image_tag("superman2.jpg"), pages_superman_path %>
+<%= form_tag pages_save_data_path, method: "post" do %>
+	<div class="form-group">
+		<%= label_tag :email, 'Ingrese su E-Mail para registrar su voto' %>
+		<%= text_field_tag :email, params[:email] , class: "form-control"%>
+		<%= hidden_field_tag 'hero', 'superman' , class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= submit_tag "Enviar", class:"btn btn-success" %>
+	</div>
+<% end %>
+</div>

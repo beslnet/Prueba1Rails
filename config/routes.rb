@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'pages/batman-vs-superman'
 
+  post 'pages/save_data'
+
   root 'pages#batman_vs_superman'
 
   # The priority is based upon order of creation: first created -> highest priority.
